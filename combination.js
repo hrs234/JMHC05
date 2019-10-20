@@ -31,8 +31,8 @@ let rotator = (mode, many) => {
 };
 
 let moveDetection = key => {
-  if (key.length >= 100 && key.length <= 0) {
-    return "angka melebihi dari 100 atau kurang dari 0";
+  if (key.length > 100 && key.length <= 0) {
+    return "angka melebihi dari 100 atau kurang dari 1";
   }
 
   let move = "left";
@@ -48,6 +48,8 @@ let moveDetection = key => {
     if (data[1] != secondKeyArr[initKey]) {
       move = "right";
       counter++;
+    } else {
+      move = "left";
     }
     data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   }
@@ -58,3 +60,4 @@ let moveDetection = key => {
 console.log("12345: ", moveDetection("12345"));
 console.log("2121: ", moveDetection("2121"));
 console.log("981: ", moveDetection("981"));
+console.log("4350: ", moveDetection("4350"));
